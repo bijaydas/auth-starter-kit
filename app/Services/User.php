@@ -11,12 +11,14 @@ class User
 {
     public function create(array $fields): UserModel
     {
-        $user = UserModel::create([
+        /**
+         * @todo
+         * Need to add validations
+         */
+        return UserModel::create([
             'name' => $fields['name'],
             'email' => $fields['email'],
             'password' => Hash::make($fields['password']),
         ]);
-
-        return $user;
     }
 }
