@@ -1,0 +1,73 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\Auth\\Factory\:\:logout\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/Auth/LogoutController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\View\\View\:\:layoutData\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Livewire/Auth/Login.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\Auth\\Factory\:\:login\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Livewire/Auth/SignUp.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\View\\View\:\:layoutData\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Livewire/Auth/SignUp.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\View\\View\:\:layoutData\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Livewire/Home.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\User\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\User\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Services/User.php
+
+		-
+			message: '#^Undefined variable\: \$this$#'
+			identifier: variable.undefined
+			count: 1
+			path: routes/console.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\TestCase\:\:get\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Auth/LoginTest.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\TestCase\:\:assertDatabaseHas\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Auth/SignUpTest.php
+
+		-
+			message: '#^Call to an undefined method PHPUnit\\Framework\\TestCase\:\:get\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/Feature/Auth/SignUpTest.php

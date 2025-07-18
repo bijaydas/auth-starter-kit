@@ -9,7 +9,6 @@ use Livewire\Livewire;
 uses(RefreshDatabase::class);
 
 describe('Login', function () {
-
     it('page is rendered', function () {
         $this->get('/login')->assertOk();
     });

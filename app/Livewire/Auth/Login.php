@@ -23,7 +23,12 @@ class Login extends Component
         $this->validate();
 
         try {
-            if (! Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
+            if (
+                ! Auth::attempt([
+                    'email' => $this->email,
+                    'password' => $this->password,
+                ])
+            ) {
                 throw new \Exception('Invalid credentials');
             }
             $this->redirectIntended(route('home'));
@@ -35,9 +40,8 @@ class Login extends Component
     #[Layout('components.layouts.root')]
     public function render(): View
     {
-        return view('livewire.auth.login')
-            ->layoutData([
-                'title' => 'Login',
-            ]);
+        return view('livewire.auth.login')->layoutData([
+            'title' => 'Login',
+        ]);
     }
 }
