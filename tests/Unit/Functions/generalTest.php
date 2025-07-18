@@ -3,11 +3,12 @@
 declare(strict_types=1);
 
 describe('title', function () {
-    it('valid title', function () {
-        expect(title('foo'))->toBe('foo | Auth');
+    $appName = 'Auth Template';
+    it('valid title', function () use ($appName) {
+        expect(title('foo'))->toBe('foo | '.$appName);
     });
 
-    it('default app name', function () {
-        expect(title())->toBe('Auth');
+    it('default app name', function () use ($appName) {
+        expect(title())->toBe($appName);
     });
 });

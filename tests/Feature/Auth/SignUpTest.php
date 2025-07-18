@@ -30,4 +30,27 @@ describe('SignUp', function () {
             ->call('submit')
             ->assertHasErrors(['password']);
     });
+
+    it('create user', function () {
+
+        $email = 'me@bijaydas.com';
+
+        Livewire::test(SignUp::class)
+            ->set('name', 'Bijay Das')
+            ->set('email', $email)
+            ->set('password', 'password')
+            ->call('submit')
+            ->assertRedirect(route('home'));
+
+        $this->assertDatabaseHas('users', [
+            'email' => $email,
+        ]);
+
+        Livewire::test(SignUp::class)
+            ->set('name', 'Bijay Das')
+            ->set('email', $email)
+            ->set('password', 'password')
+            ->call('submit')
+            ->assertHasErrors(['email']);
+    });
 });
