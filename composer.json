@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "bijaydas/auth-starter",
+    "name": "bijaydas/auth-starter-kit",
     "type": "project",
     "description": "Auth starter kit",
     "keywords": [
