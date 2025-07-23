@@ -14,7 +14,9 @@
         @endif
 
         @if($heading || $description)
-        <flux:separator variant="subtle" />
+        <flux:separator variant="subtle" class="my-3" />
         @endif
+
+        {{ $slot }}
     </flux:main>
 </x-layouts.root>

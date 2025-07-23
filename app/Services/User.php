@@ -21,4 +21,21 @@ class User
             'password' => Hash::make($fields['password']),
         ]);
     }
+
+    public function update(UserModel $user, $fields): bool
+    {
+        return $user->update($fields);
+    }
+
+    public function updatePassword(UserModel $user, $fields): bool
+    {
+        return $user->update([
+            'password' => Hash::make($fields['password']),
+        ]);
+    }
+
+    public function isValidCurrentPassword(UserModel $user, string $password): bool
+    {
+        return Hash::check($password, $user->password);
+    }
 }
