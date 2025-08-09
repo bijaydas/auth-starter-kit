@@ -7,6 +7,10 @@
 
     <flux:navlist variant="outline">
         <flux:navlist.item icon="home" href="{{ route('home', ['ref' => 'sidenav']) }}" current>Home</flux:navlist.item>
+
+        <flux:navlist.group expandable heading="Users" class="hidden lg:grid">
+            <flux:navlist.item href="{{ route('admin.user.index') }}">Dashboard</flux:navlist.item>
+        </flux:navlist.group>
     </flux:navlist>
 
     <flux:spacer />

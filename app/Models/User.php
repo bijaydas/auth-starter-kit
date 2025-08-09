@@ -4,13 +4,15 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Enums\UserRole;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, HasRoles, Notifiable;
 
     protected $fillable = [
         'name',
@@ -38,5 +40,15 @@ class User extends Authenticatable
         }
 
         return $this->name;
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->hasRole(UserRole::ADMIN->value);
+    }
+
+    public function isUser(): bool
+    {
+        return $this->hasRole(UserRole::USER->value);
     }
 }

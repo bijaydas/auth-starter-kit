@@ -7,7 +7,8 @@ use App\Livewire\Settings\ChangePassword;
 use App\Livewire\Settings\EditProfile;
 use Illuminate\Support\Facades\Route;
 
-require __DIR__.'/auth.php';
+require_once __DIR__.'/auth.php';
+require_once __DIR__.'/admin.php';
 
 Route::middleware('auth')->group(function () {
     Route::get('/', Home::class)->name('home');
